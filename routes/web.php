@@ -60,3 +60,6 @@ Route::get('transaction/cancel/{id}', [TransactionController::class, 'removeFrom
 Route::get('transaction/cancel', [TransactionController::class, 'cancel'])->name('transaction.cancel');
 Route::post('transaction/checkout', [TransactionController::class, 'checkout'])->name('transaction.checkout');
 
+// route menampilkan detail transaction
+Route::get('transaction/{id}', [TransactionController::class, 'show'])->name('transaction.show');
+

@@ -34,12 +34,7 @@
             
             <td>Rp. {{ number_format($transaction->total_price, 0, ',', '.') }}</td>
             <td>
-                <a href="" class="btn btn-info text-white">Detail</a>
-                {{-- <form action="" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger text-white" >Hapus</button>
-                </form> --}}
+                <a href="{{ route('transaction.show', $transaction->id) }}" class="btn btn-info text-white">Detail</a>
             </td>
         </tr>
 

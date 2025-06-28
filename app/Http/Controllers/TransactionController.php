@@ -113,4 +113,10 @@ class TransactionController extends Controller
         session()->forget('cart');
         return redirect()->route('transaction.index')->with('success', 'Transaksi berhasil disimpan.');
     }
+
+    public function show($id)
+    {
+        $transaction = Transaction::with('details.product')->find($id);
+        return view('pages.transaction.show', compact('transaction'));
+    }
 }
